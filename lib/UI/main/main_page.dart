@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../deliver/deliver_page.dart';
 import '../home/home_page.dart';
 import '../stores/store_page.dart';
+import '../users/users_screen.dart';
 
 class AdminPanel extends StatefulWidget {
   @override
@@ -14,6 +16,8 @@ class _AdminPanelState extends State<AdminPanel> {
   final List<Widget> _pages = [
     HomePage(),
     StorePage(),
+    ManageDriversPage(),
+    UsersPage(),
     SettingsPage(),
   ];
 
@@ -56,19 +60,24 @@ class AdminDrawer extends StatelessWidget {
             onTap: () => onItemTapped(0),
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text("Settings"),
+            leading: Icon(Icons.store),
+            title: Text("Stores"),
             onTap: () => onItemTapped(1),
+          ),
+          ListTile(
+            leading: Icon(Icons.delivery_dining),
+            title: Text("Deliver"),
+            onTap: () => onItemTapped(2),
+          ),
+          ListTile(
+            leading: Icon(Icons.supervised_user_circle),
+            title: Text("Users"),
+            onTap: () => onItemTapped(3),
           ),
           ListTile(
             leading: Icon(Icons.settings),
             title: Text("Settings"),
-            onTap: () => onItemTapped(1),
-          ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text("Settings"),
-            onTap: () => onItemTapped(1),
+            onTap: () => onItemTapped(4),
           ),
         ],
       ),
